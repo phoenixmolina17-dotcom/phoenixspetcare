@@ -4,7 +4,7 @@ set -euo pipefail
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 if [[ "${SITES_ENV_READY:-}" != "1" ]]; then
-  bash "$SCRIPT_DIR/sites-env.sh"
+bash "$SCRIPT_DIR/sites-env.sh" -- ...
 fi
 
 command -v timeout >/dev/null || {
